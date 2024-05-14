@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="87636a46-0fe7-46b3-b666-9cbabcd50b16" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/logs/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/logs/nginx.pid" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/logs/nginx.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/constant/AutoFillConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/constant/JwtClaimsConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/constant/MessageConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/constant/PasswordConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/constant/StatusConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/context/BaseContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/enumeration/OperationType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/AccountLockedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/AccountNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/AddressBookBusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/BaseException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/DeletionNotAllowedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/LoginFailedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/OrderBusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/PasswordEditFailedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/PasswordErrorException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/SetmealEnableFailedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/ShoppingCartBusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/exception/UserNotLoginException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/json/JacksonObjectMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/properties/AliOssProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/properties/JwtProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/properties/WeChatProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/result/PageResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/result/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/utils/AliOssUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/utils/HttpClientUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/utils/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/onlinedelivery/utils/WeChatPayUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/CategoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/CategoryPageQueryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/DataOverViewQueryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/DishDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/DishPageQueryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/EmployeeDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/EmployeeLoginDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/EmployeePageQueryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/GoodsSalesDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/OrdersCancelDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/OrdersConfirmDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/OrdersDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/OrdersPageQueryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/OrdersPaymentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/OrdersRejectionDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/OrdersSubmitDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/PasswordEditDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/SetmealDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/SetmealPageQueryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/ShoppingCartDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/dto/UserLoginDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/AddressBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/Dish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/DishFlavor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/Orders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/Setmeal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/SetmealDish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/ShoppingCart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/BusinessDataVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/DishItemVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/DishOverViewVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/DishVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/EmployeeLoginVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/OrderOverViewVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/OrderPaymentVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/OrderReportVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/OrderStatisticsVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/OrderSubmitVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/OrderVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/SalesTop10ReportVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/SetmealOverViewVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/SetmealVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/TurnoverReportVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/UserLoginVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pojo/src/main/java/com/onlinedelivery/vo/UserReportVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/SkyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/config/WebMvcConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/controller/admin/EmployeeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/handler/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/interceptor/JwtTokenAdminInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/mapper/EmployeeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/service/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/service/impl/EmployeeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/mapper/EmployeeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-common/src/main/java/com/sky/constant/MessageConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-common/src/main/java/com/sky/constant/MessageConstant.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="21" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2fpaLQLSmFyqyKQAMlbVpGBY0wg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sky-take-out" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15332031" />
+    <property name="project.structure.side.proportion" value="0.4792148" />
+    <property name="settings.editor.selected.configurable" value="reactor" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CISC699\online-food-delivery\online-delivery\common\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SkyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.onlinedelivery.SkyApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="87636a46-0fe7-46b3-b666-9cbabcd50b16" name="Changes" comment="" />
+      <created>1714500428325</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714500428325</updated>
+      <workItem from="1714500430463" duration="11173000" />
+      <workItem from="1714998582558" duration="46000" />
+      <workItem from="1714998758888" duration="8175000" />
+      <workItem from="1715178679964" duration="8316000" />
+      <workItem from="1715299957454" duration="3268000" />
+      <workItem from="1715303809063" duration="3578000" />
+      <workItem from="1715461327324" duration="3032000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/mapper/EmployeeMapper.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/com/onlinedelivery/controller/admin/EmployeeController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
