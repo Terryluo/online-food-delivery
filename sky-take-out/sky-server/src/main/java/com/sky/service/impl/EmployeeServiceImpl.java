@@ -39,13 +39,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         //compare to password
-        // TODO 后期需要进行md5加密，然后再进行比对
+        // use md5 to mask password
+        password = DigestUtils.md5DigestAsHex(password.getBytes());
         if (!password.equals(employee.getPassword())) {
             //password error
             throw new PasswordErrorException(MessageConstant.PASSWORD_ERROR);
         }
 
-        if (employee.getStatus() == StatusConstant.DISABLE) {
+        if (employee.getStatus() == StatusConstant.DISABLED) {
             //account locked
             throw new AccountLockedException(MessageConstant.ACCOUNT_LOCKED);
         }
