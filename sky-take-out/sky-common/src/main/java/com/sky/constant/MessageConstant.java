@@ -8,6 +8,7 @@ public class MessageConstant {
     public static final String PASSWORD_ERROR = "Password Error";
     public static final String ACCOUNT_NOT_FOUND = "Account Not Found";
     public static final String ACCOUNT_LOCKED = "Account Locked";
+    public static final String ALREADY_EXISTS = "Already Exists";
     public static final String UNKNOWN_ERROR = "Unknown Error";
     public static final String USER_NOT_LOGIN = "User Not Login";
     public static final String CATEGORY_BE_RELATED_BY_SETMEAL = "Category is Related by Set Meal, Cannot Delete";
