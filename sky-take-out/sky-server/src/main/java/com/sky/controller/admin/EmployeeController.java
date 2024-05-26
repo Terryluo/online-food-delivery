@@ -114,4 +114,29 @@ public class EmployeeController {
         employeeService.employeeStatus(id, status);
         return Result.success();
     }
+
+    /**
+     * get employee by id
+     *
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation(value="get employee by id")
+    public Result<Employee> getEmployeeById(@PathVariable Long id) {
+        Employee employee = employeeService.getEmployeeById(id);
+        return Result.success(employee);
+    }
+
+    /**
+     * modify employee information
+     *
+     * @return
+     */
+    @PutMapping
+    @ApiOperation(value="modify employee information")
+    public Result modifyEmployeeInformation(@RequestBody EmployeeDTO employeeDTO) {
+        log.info("Modify employee information:{}", employeeDTO);
+        employeeService.modifyEmployeeInformation(employeeDTO);
+        return Result.success();
+    }
 }
