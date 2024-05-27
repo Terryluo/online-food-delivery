@@ -6,6 +6,7 @@ import com.sky.constant.MessageConstant;
 import com.sky.constant.StatusConstant;
 import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
+import com.sky.entity.Category;
 import com.sky.entity.Dish;
 import com.sky.entity.DishFlavor;
 import com.sky.exception.DeletionNotAllowedException;
@@ -18,6 +19,7 @@ import com.sky.vo.DishVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -90,9 +92,54 @@ public class DishServiceImpl implements DishService {
             throw new DeletionNotAllowedException(MessageConstant.DISH_BE_RELATED_BY_SETMEAL);
         }
 
-        for (Long id : ids) {
-            dishMapper.deleteById(id);
-            dishFlavorMapper.deleteByDishId(id);
+        dishMapper.batchDeleteById(ids);
+        dishFlavorMapper.batchDeleteByDishId(ids);
+    }
+
+    /**
+     * get dish and flavor by dish id
+     * @param id
+     */
+    public DishVO getDishWithFlavorById(Long id) {
+        Dish dish = dishMapper.getById(id);
+        List<DishFlavor> dishFlavors = dishFlavorMapper.getByDishId(id);
+
+        DishVO dishVO = new DishVO();
+        BeanUtils.copyProperties(dish, dishVO);
+        dishVO.setFlavors(dishFlavors);
+        return dishVO;
+    }
+
+    /**
+     * modify dish
+     * @param dishDTO
+     * @return
+     */
+    public void modifyDishWithFlavor(DishDTO dishDTO) {
+        Dish dish = new Dish();
+        BeanUtils.copyProperties(dishDTO, dish);
+        // update dish table
+        dishMapper.update(dish);
+
+        // update dish_flavor table
+        dishFlavorMapper.deleteByDishId(dishDTO.getId());
+        List<DishFlavor> dishFlavors = dishDTO.getFlavors();
+        if (dishFlavors != null && dishFlavors.size() != 0) {
+            dishFlavors.forEach(dishFlavor -> dishFlavor.setDishId(dishDTO.getId()));
+            dishFlavorMapper.insertBatch(dishFlavors);
         }
+    }
+
+    /**
+     * modify dish status
+     * @param status, id
+     * @return
+     */
+    public void modifyDishStatus(Integer status, Long id) {
+        Dish dish = Dish.builder()
+                .id(id)
+                .status(status)
+                .build();
+        dishMapper.update(dish);
     }
 }
