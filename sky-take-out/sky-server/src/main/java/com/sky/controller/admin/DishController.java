@@ -104,4 +104,16 @@ public class DishController {
         dishService.modifyDishStatus(status,id);
         return Result.success();
     }
+
+    /**
+     * search dish by category id
+     * @param categoryId
+     * @return
+     */
+    @GetMapping("/list")
+    @ApiOperation("search dish by category id")
+    public Result<List<Dish>> list(Long categoryId){
+        List<Dish> list = dishService.list(categoryId);
+        return Result.success(list);
+    }
 }
