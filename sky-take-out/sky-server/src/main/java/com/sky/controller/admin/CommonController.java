@@ -1,6 +1,8 @@
 package com.sky.controller.admin;
 
+import com.sky.constant.MessageConstant;
 import com.sky.result.Result;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,8 +39,8 @@ public class CommonController {
             String fileUrl = "http://localhost:8080/uploads/" + fileName;
             return Result.success(fileUrl);
         } catch (Exception e) {
-            e.printStackTrace();
-            return Result.error("Upload error");
+            log.error("Image upload error", e);
         }
+        return Result.error(MessageConstant.UNKNOWN_ERROR);
     }
 }
