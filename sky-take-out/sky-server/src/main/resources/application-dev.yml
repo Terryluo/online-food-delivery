@@ -6,3 +6,6 @@ sky:
     database: online_delivery
     username: root
     password: abc123
+  redis:
+    host: localhost
+    port: 6379

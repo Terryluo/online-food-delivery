@@ -16,6 +16,9 @@ spring:
     multipart:
       max-file-size: 2MB
       max-request-size: 10MB
+  redis:
+    host: ${sky.redis.host}
+    port: ${sky.redis.port}
 
 file:
   upload-dir: ../uploads

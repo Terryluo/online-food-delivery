@@ -48,7 +48,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
      * @return
      */
     @Bean
-    public Docket docket() {
+    public Docket docketAdmin() {
         log.info("start generating the api files...");
         ApiInfo apiInfo = new ApiInfoBuilder()
                 .title("Online Delivery")
@@ -57,9 +57,33 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
                 .description("Online Delivery Swagger API Testing")
                 .build();
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
+                .groupName("admin Apis")
                 .apiInfo(apiInfo)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.sky.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.sky.controller.admin"))
+                .paths(PathSelectors.any())
+                .build();
+        return docket;
+    }
+
+    /**
+     * create doc from knife4j
+     * @return
+     */
+    @Bean
+    public Docket docketUser() {
+        log.info("start generating the api files...");
+        ApiInfo apiInfo = new ApiInfoBuilder()
+                .title("Online Delivery")
+                .contact(new Contact("Zhiteng Luo", "https://www.harrisburgu.edu/", "zluo2@my.harrisburgu.edu"))
+                .version("1.0")
+                .description("Online Delivery Swagger API Testing")
+                .build();
+        Docket docket = new Docket(DocumentationType.SWAGGER_2)
+                .groupName("User Apis")
+                .apiInfo(apiInfo)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.sky.controller.user"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;
