@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin/setmeal")
 @Api(tags = "Setmeal APIs")
@@ -42,5 +44,17 @@ public class SetmealController {
     public Result<PageResult> page(SetmealPageQueryDTO setmealPageQueryDTO) {
         PageResult pageResult = setmealService.pageQuery(setmealPageQueryDTO);
         return Result.success(pageResult);
+    }
+
+    /**
+     * batch delete setmeal
+     * @param ids
+     * @return
+     */
+    @DeleteMapping
+    @ApiOperation("batch delete setmeal")
+    public Result batchDeleteSetmeal(@RequestParam List<Long> ids){
+        setmealService.batchDeleteSetmeal(ids);
+        return Result.success();
     }
 }
