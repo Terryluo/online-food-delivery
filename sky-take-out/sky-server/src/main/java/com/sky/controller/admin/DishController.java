@@ -93,14 +93,14 @@ public class DishController {
     }
 
     /**
-     * modify category status
+     * modify dish status
      * @param status
      * @param id
      * @return
      */
     @PostMapping("/status/{status}")
     @ApiOperation("modify dish status")
-    public Result<String> modifyCategoryStatus(@PathVariable("status") Integer status, Long id){
+    public Result<String> modifyDishStatus(@PathVariable("status") Integer status, Long id){
         dishService.modifyDishStatus(status,id);
         return Result.success();
     }

@@ -41,7 +41,7 @@ public interface DishMapper {
 
     /**
      * select dish by id
-     * @param dishPageQueryDTO
+     * @param id
      * @return
      */
     @Select("select * from dish where id = #{id}")
@@ -56,4 +56,12 @@ public interface DishMapper {
     void update(Dish dish);
 
     List<Dish> list(Dish dish);
+
+    /**
+     * get setmeal by id
+     * @param setmealId
+     * @return
+     */
+    @Select("select a.* from dish a left join setmeal_dish b on a.id = b.dish_id where b.setmeal_id = #{setmealId}")
+    List<Dish> getBySetmealId(Long setmealId);
 }
