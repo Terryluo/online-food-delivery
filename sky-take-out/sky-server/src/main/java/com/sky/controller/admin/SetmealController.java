@@ -10,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class SetmealController {
      */
     @PostMapping
     @ApiOperation("new setmeal")
+    @CacheEvict(cacheNames = "setmealCache", key = "#setmealDTO.categoryId")
     public Result addSetmeal(@RequestBody SetmealDTO setmealDTO) {
         setmealService.addWithDish(setmealDTO);
         return Result.success();
@@ -54,6 +56,7 @@ public class SetmealController {
      */
     @DeleteMapping
     @ApiOperation("batch delete setmeal")
+    @CacheEvict(cacheNames = "setmealCache", allEntries = true)
     public Result batchDeleteSetmeal(@RequestParam List<Long> ids){
         setmealService.batchDeleteSetmeal(ids);
         return Result.success();
@@ -80,6 +83,7 @@ public class SetmealController {
      */
     @PutMapping
     @ApiOperation("modify setmeal")
+    @CacheEvict(cacheNames = "setmealCache", allEntries = true)
     public Result modifySetmeal(@RequestBody SetmealDTO setmealDTO) {
         setmealService.modifySetmeal(setmealDTO);
         return Result.success();
@@ -93,6 +97,7 @@ public class SetmealController {
      */
     @PostMapping("/status/{status}")
     @ApiOperation("modify setmeal status")
+    @CacheEvict(cacheNames = "setmealCache", allEntries = true)
     public Result<String> modifySetmealStatus(@PathVariable("status") Integer status, Long id){
         setmealService.modifySetmealStatus(status,id);
         return Result.success();
