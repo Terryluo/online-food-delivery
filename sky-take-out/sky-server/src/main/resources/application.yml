@@ -47,3 +47,9 @@ sky:
     admin-ttl: 7200000
     # jwt token name
     admin-token-name: token
+    user-secret-key: itclient
+    user-ttl: 7200000
+    user-token-name: authentication
+  wechat:
+    appid: ${sky.wechat.appid}
+    secret: ${sky.wechat.secret}
