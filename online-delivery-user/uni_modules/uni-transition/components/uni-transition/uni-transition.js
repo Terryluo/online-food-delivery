@@ -250,7 +250,7 @@ var _createAnimation = __webpack_require__(/*! ./createAnimation */ 252);functio
             this.animation[i](obj[i]);
           }
         } catch (e) {
-          console.error("\u65B9\u6CD5 ".concat(i, " \u4E0D\u5B58\u5728"));
+          console.error("method ".concat(i, " does not exist"));
         }
       }
       this.animation.step(config);

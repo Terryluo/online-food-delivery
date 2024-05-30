@@ -11,9 +11,11 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/admin/dish")
@@ -23,6 +25,9 @@ public class DishController {
 
     @Autowired
     private DishService dishService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * Add new dish
@@ -35,6 +40,10 @@ public class DishController {
     public Result saveDish(@RequestBody DishDTO dishDTO) {
         log.info("Add new dish: {}", dishDTO);
         dishService.saveDish(dishDTO);
+
+        // clear redis cache
+        clearCache("dish_" + dishDTO.getCategoryId());
+
         return Result.success();
     }
 
@@ -63,6 +72,10 @@ public class DishController {
     public Result delete(@RequestParam List<Long> ids) {
         log.info("delete dishes: {}", ids);
         dishService.batchDelete(ids);
+
+        // clear redis cache
+        clearCache("dish_*");
+
         return Result.success();
     }
 
@@ -89,6 +102,10 @@ public class DishController {
     public Result modifyDish(@RequestBody DishDTO dishDTO) {
         log.info("modify dish: {}", dishDTO);
         dishService.modifyDishWithFlavor(dishDTO);
+
+        // clear redis cache
+        clearCache("dish_*");
+
         return Result.success();
     }
 
@@ -102,6 +119,10 @@ public class DishController {
     @ApiOperation("modify dish status")
     public Result<String> modifyDishStatus(@PathVariable("status") Integer status, Long id){
         dishService.modifyDishStatus(status,id);
+
+        // clear redis cache
+        clearCache("dish_*");
+
         return Result.success();
     }
 
@@ -115,5 +136,10 @@ public class DishController {
     public Result<List<Dish>> list(Long categoryId){
         List<Dish> list = dishService.list(categoryId);
         return Result.success(list);
+    }
+
+    private void clearCache(String pattern) {
+        Set keys = redisTemplate.keys(pattern);
+        redisTemplate.delete(keys);
     }
 }

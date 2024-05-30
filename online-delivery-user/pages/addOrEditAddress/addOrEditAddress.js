@@ -526,7 +526,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
         }
       }
       if (this.form.name) {
-        var _reg = /^[\u0391-\uFFE5A-Za-z0-9]{2,12}$/;
+        var _reg = /^[\u0391-\uFFE5a-zA-Z 0-9]{2,12}$/;
         if (!_reg.test(this.form.name)) {
           return uni.showToast({
             title: "请输入合法的2-12个字符",
