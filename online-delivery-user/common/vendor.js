@@ -4281,13 +4281,13 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
     getData: function getData() {
       var res = wx.getMenuButtonBoundingClientRect();
       var _this = this;
-      // 获取店铺状态
+      // get restaurant status
       this.getShopInfo();
       this.selectHeight = res.height;
       if (this.token() === '') {
         uni.showModal({
-          title: '温馨提示',
-          content: '授权微信登录后才能点餐！',
+          title: 'Online Delivery Application',
+          content: 'Login Wechat for ordering',
           showCancel: false,
           success: function success(res) {
             if (res.confirm) {
@@ -4301,16 +4301,16 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
                   }
                 } });
 
-              // 授权
+              // authorization
               uni.getUserProfile({
-                desc: '登录',
+                desc: 'Login',
                 success: function success(userInfo) {
                   _this.setBaseUserInfo(userInfo.userInfo);
                   var params = {
                     // phone: jsCode,
                     // avatar: userInfo.userInfo.avatarUrl,
                     // name: userInfo.userInfo.nickName,
-                    // sex: userInfo.userInfo.gender,
+                    // gender: userInfo.userInfo.gender,
                     code: jsCode };
 
                   console.log(userInfo.userInfo, 11);
@@ -4334,12 +4334,11 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
     },
 
     init: function init() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                // 获取菜品和套餐分类接口
+                // dish and setmeal APIs
                 if (_this2.typeIndex !== 0) {
                   _this2.typeIndex = 0;
                 }
 
-                // 获取店铺联系方式
                 //_this2.getShopPhone();
                 (0, _api.getCategoryList)().then(function (res) {
                   if (res && res.code === 1) {
@@ -21962,7 +21961,7 @@ var _default = {
       this.address = newAddress.provinceName + newAddress.cityName + newAddress.districtName + newAddress.detail;
       this.phoneNumber = newAddress.phone;
       this.nickName = newAddress.consignee;
-      this.gender = newAddress.sex;
+      this.gender = newAddress.gender;
       this.addressBookId = newAddress.id;
       this.addressLabel = (0, _index.getLableVal)(newAddress.label);
     } else {
@@ -22044,7 +22043,7 @@ var _default = {
           detail;
           _this5.phoneNumber = res.data.phone;
           _this5.nickName = res.data.consignee;
-          _this5.gender = res.data.sex;
+          _this5.gender = res.data.gender;
           _this5.addressBookId = res.data.id;
           _this5.addressLabel = (0, _index.getLableVal)(res.data.label);
           _this5.tagLabel = res.data.label;

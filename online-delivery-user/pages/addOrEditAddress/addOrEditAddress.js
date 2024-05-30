@@ -366,7 +366,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
         // address: '',
         type: 1,
         // radio: 0,
-        sex: "0",
+        gender: "0",
         provinceCode: "11",
         provinceName: "",
         cityCode: "1101",
@@ -432,7 +432,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
             districtCode: res.data.districtCode,
             phone: res.data.phone,
             name: res.data.consignee,
-            sex: res.data.sex,
+            gender: res.data.gender,
             type: Number(res.data.label),
             detail: res.data.detail,
             id: res.data.id };
@@ -478,7 +478,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
       }
     },
     sexChangeHandle: function sexChangeHandle(val) {
-      this.form.sex = val;
+      this.form.gender = val;
     },
     // 保存地址
     addAddressFun: function addAddressFun() {
@@ -537,7 +537,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
       }
       var params = _objectSpread(_objectSpread({},
       this.form), {}, {
-        // sex: this.form.radio,
+        // gender: this.form.radio,
         label: this.form.type,
         consignee: this.form.name,
         provinceName: this.address.split("/")[0],
