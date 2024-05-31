@@ -1,6 +1,6 @@
 {
   "navigationStyle": "custom",
-  "navigationBarTitleText": "历史订单",
+  "navigationBarTitleText": "Order History",
   "enablePullDownRefresh": false,
   "navigationBarBackgroundColor": "#333333",
   "usingComponents": {

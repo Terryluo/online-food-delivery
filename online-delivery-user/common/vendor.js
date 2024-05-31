@@ -20219,7 +20219,7 @@ exports.delAddressBook = delAddressBook;var queryAddressBookById = function quer
 };
 
 
-// 再来一单
+// Orderagain
 exports.queryAddressBookById = queryAddressBookById;var oneOrderAgain = function oneOrderAgain(params) {
   return (0, _request.request)({
     url: '/user/order/again',
@@ -20292,7 +20292,7 @@ exports.reminderOrder = reminderOrder;var paymentOrder = function paymentOrder(p
       method: 'PUT',
       params: params }));};
 
-// 再来一单
+// Orderagain
 exports.paymentOrder = paymentOrder;var repetitionOrder = function repetitionOrder(params) {return (
     (0, _request.request)({
       url: "/user/order/repetition/".concat(params),
@@ -21132,21 +21132,21 @@ exports.splitMobile = splitMobile;var getLableVal = function getLableVal(item) {
 // status
 exports.getLableVal = getLableVal;var statusWord = function statusWord(status, time) {
   if (status === 1 && time > 0) {
-    return '待付款';
+    return 'Pending Payment';
   } else if (status === 6 || time < 0 && status === 1) {
-    return '已取消';
+    return 'Canceld';
   }
   switch (status) {
     case 2:
-      return '待接单';
+      return 'To be Confirmed';
     case 3:
-      return '待派送';
+      return 'Confirmed';
     case 4:
-      return '派送中';
+      return 'Delivery';
     case 5:
-      return '已完成';
+      return 'Completed';
     case 7:
-      return '已退款';}
+      return 'Refunded';}
 
 };
 // 倒计时
@@ -28567,7 +28567,7 @@ var _default = {
         this.textTip = '请联系商家进行取消！';
       }
     },
-    // 再来一单
+    // Orderagain
     oneMoreOrder: function oneMoreOrder(id) {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
 
                   (0, _api.delShoppingCart)());case 2:

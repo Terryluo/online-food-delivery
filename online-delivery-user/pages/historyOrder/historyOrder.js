@@ -292,7 +292,7 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 29);function _interopRe
       scrollH: 0,
       tabIndex: 0,
       tabBars: [
-      '全部订单', '待付款', '已取消'],
+      'All Orders', 'Pending Payment', 'Canceled'],
 
       textTip: '',
       showConfirm: false,
@@ -365,7 +365,7 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 29);function _interopRe
         }
       });
     },
-    // 再来一单
+    // Orderagain
     oneMoreOrder: function oneMoreOrder(id) {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var pages, routeIndex;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 pages = getCurrentPages();
                 routeIndex = pages.findIndex(function (item) {return item.route === 'pages/index/index';});
