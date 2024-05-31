@@ -369,7 +369,7 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 29);function _interopRe
     oneMoreOrder: function oneMoreOrder(id) {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var pages, routeIndex;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 pages = getCurrentPages();
                 routeIndex = pages.findIndex(function (item) {return item.route === 'pages/index/index';});
-                // 先清空购物车
+                // Please clean up Order
                 _context.next = 4;return (0, _api.delShoppingCart)();case 4:
                 (0, _api.repetitionOrder)(id).then(function (res) {
                   if (res.code === 1) {

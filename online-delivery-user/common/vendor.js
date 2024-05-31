@@ -4554,7 +4554,7 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
                   params = {
                     setmealId: item.id };
 
-                } else if (form === '购物车') {
+                } else if (form === 'Order') {
                   if (item.dishId) {
                     params = _objectSpread(_objectSpread({},
                     params), {}, {
@@ -4623,7 +4623,7 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
                     // ...params,
                     setmealId: item.id };
 
-                } else if (form === '购物车') {
+                } else if (form === 'Order') {
                   if (item.dishId) {
                     params = _objectSpread(_objectSpread({},
                     params), {}, {
@@ -20074,7 +20074,7 @@ exports.dishListByCategoryId = dishListByCategoryId;var commonDownload = functio
 };
 
 
-// 购物车----加菜功能实现
+// Order----加菜功能实现
 exports.commonDownload = commonDownload;var addShoppingCart = function addShoppingCart(params) {
   return (0, _request.request)({
     url: '/user/shoppingCart',
