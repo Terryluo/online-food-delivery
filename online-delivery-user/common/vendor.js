@@ -2642,12 +2642,12 @@ var store = new _vuex.default.Store({
     sessionId: '',
     addressBackUrl: '',
     dishTypeIndex: 0,
-    shopPhone: '', //店铺电话
-    shopStatus: {}, //店铺状态
+    shopPhone: '', 
+    shopStatus: {}, 
     orderData: {},
     token: '',
     arrivals: '',
-    remarkData: '', //备注
+    remarkData: '', //Note
     addressData: {} //地址选择
   },
   mutations: {
@@ -4287,8 +4287,9 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
       if (this.token() === '') {
         uni.showModal({
           title: 'Online Delivery Application',
-          content: 'Login Wechat for ordering',
+          content: 'Login Wechat for Ordering',
           showCancel: false,
+          confirmText: 'Confirm',
           success: function success(res) {
             if (res.confirm) {
               var jsCode = '';
@@ -21214,7 +21215,7 @@ var getOvertime = function getOvertime(time) {
 exports.getOvertime = getOvertime;var getWeekDate = function getWeekDate(date) {
   var now = new Date(date);
   var day = now.getDay();
-  var weeks = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+  var weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var week = weeks[day];
   return week;
 
@@ -21853,7 +21854,7 @@ var _default = {
 
       expirationTime: '',
       // rocallTime:'',
-      tablewareData: '无需餐具',
+      tablewareData: 'No tableware',
       tableware: '',
       packAmount: 0,
       value: [0, 0],
@@ -21862,14 +21863,14 @@ var _default = {
       tabIndex: 0,
       scrollinto: 'tab0',
       scrollH: 0,
-      popleft: ['今天', '明天'],
+      popleft: ['Today', 'Tomorrow'],
       visible: true,
       baseData: [
-      '无需餐具', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      'No tableware', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
 
-      activeRadio: '无需餐具', //存的是选中的value值
-      radioGroup: ['依据餐量提供', '无需餐具'],
-      popright: ['立即派送', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00',
+      activeRadio: 'No tableware', //存的是选中的value值
+      radioGroup: ['Follow by meal', 'No tableware'],
+      popright: ['Send out now', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00',
       '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30',
       '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00'],
 
@@ -22020,7 +22021,7 @@ var _default = {
         });
         // this.newDateData.shift() 
         this.newDateData.splice(0, 2);
-        this.newDateData.unshift('立即派送');
+        this.newDateData.unshift('Send out now');
       }
 
     },
@@ -22092,7 +22093,7 @@ var _default = {
     payOrderHandle: function payOrderHandle() {var _params,_this7 = this;
       this.isHandlePy = true;
 
-      if (!this.address) {
+      if (!this.addressDetail) {
         uni.showToast({
           title: 'Please Select Address',
           icon: 'none' });
@@ -22102,14 +22103,14 @@ var _default = {
       var num = null;
       var status = null;
 
-      // this.tablewareData==='无需餐具'?0:Number(this.tablewareData)
+      // this.tablewareData==='No tableware'?0:Number(this.tablewareData)
       var params = (_params = {
         payMethod: 1,
         addressBookId: this.addressBookId,
         remark: this.remark,
-        estimatedDeliveryTime: this.arrivalTime === '立即派送' ? (0, _index.presentFormat)() : (0, _index.dateFormat)(this.isTomorrow,
+        estimatedDeliveryTime: this.arrivalTime === 'Send out now' ? (0, _index.presentFormat)() : (0, _index.dateFormat)(this.isTomorrow,
         this.arrivalTime),
-        deliveryStatus: this.arrivalTime === '立即派送' ? 1 : 0 }, _defineProperty(_params, "remark",
+        deliveryStatus: this.arrivalTime === 'Send out now' ? 1 : 0 }, _defineProperty(_params, "remark",
       this.remark), _defineProperty(_params, "tablewareStatus",
       this.status), _defineProperty(_params, "tablewareNumber",
       this.num), _defineProperty(_params, "packAmount",
@@ -22196,16 +22197,16 @@ var _default = {
         // 	// console.log(cont,'ceshi',this.activeRadio)
         this.num = Number(this.tableware);
         this.status = 0;
-        if (this.tableware === '无需餐具') {
+        if (this.tableware === 'No tableware') {
           this.num = 0;
           this.status = 0;
         }
-        if (this.tableware === '依据餐量提供') {
+        if (this.tableware === 'Follow by meal') {
           this.num = this.orderDishNumber;
           this.status = 1;
         }
 
-        if (this.tableware !== '依据餐量提供' || this.tableware !== '无需餐具') {
+        if (this.tableware !== 'Follow by meal' || this.tableware !== 'No tableware') {
           this.tablewareData = this.tableware + '份';
 
         } else {
@@ -22218,7 +22219,7 @@ var _default = {
         // 	// console.log(cont,'ceshi',this.activeRadio)
         this.tablewareData = cont;
         // 	// this.$emit('changeCont',cont )
-        if (this.activeRadio === '依据餐量提供') {
+        if (this.activeRadio === 'Follow by meal') {
           // this.tablewareData = this.activeRadio
           this.num = this.orderDishNumber;
           this.status = 1;
@@ -22268,7 +22269,7 @@ var _default = {
       this.setTime(val);
     },
     setTime: function setTime(val) {
-      if (val === '立即派送') {
+      if (val === 'Send out now') {
         this.getHarfAnOur();
       } else {
         this.arrivalTime = val;

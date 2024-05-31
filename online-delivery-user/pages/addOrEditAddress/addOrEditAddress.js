@@ -442,12 +442,12 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
           res.data.cityName &&
           res.data.districtName)
           {
-            _this.address =
-            res.data.provinceName +
-            "/" +
-            res.data.cityName +
-            "/" +
-            res.data.districtName;
+            _this.addressDetail = res.data.addressDetail;
+            //res.data.provinceName +
+            //"/" +
+           // res.data.cityName +
+           // "/" +
+            //res.data.districtName;
           }
         }
       });
@@ -465,7 +465,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
       this.form.cityCode = e.cityCode;
       this.form.districtCode = e.areaCode;
       // 把选择的地址回显到input框中
-      this.address = e.label;
+      this.addressDetail = e.label;
     },
     bindTextAreaBlur: function bindTextAreaBlur(e) {
       console.log(e.detail.value);

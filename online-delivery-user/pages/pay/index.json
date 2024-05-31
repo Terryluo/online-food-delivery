@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "支付订单",
+  "navigationBarTitleText": "Order Confirmation",
   "enablePullDownRefresh": false,
   "navigationBarBackgroundColor": "#333333",
   "usingComponents": {}
