@@ -28583,17 +28583,17 @@ var _default = {
     statusWord: function statusWord(status) {
       console.log(this.timeout, status);
       if (this.timeout && status === 1 || this.orderDetailsData.status === 6) {
-        return '订单已取消';
+        return 'Order Canceled';
       }
       switch (status) {
         case 2:
-          return '等待商户接单';
+          return 'Waiting For Confirmed';
         case 3:
-          return '商家已接单';
+          return 'Confirmed';
         case 4:
-          return '订单派送中';
+          return 'Delivery';
         case 5:
-          return '订单已完成';}
+          return 'Completed';}
 
     },
     // 订单倒计时

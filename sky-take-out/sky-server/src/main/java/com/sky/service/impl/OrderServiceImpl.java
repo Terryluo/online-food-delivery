@@ -108,9 +108,8 @@ public class OrderServiceImpl implements OrderService {
 
         if (page != null && page.getTotal() > 0) {
             for (Orders orders : page) {
-                Long orderId = orders.getId();// 订单id
+                Long orderId = orders.getId();
 
-                // 查询订单明细
                 List<OrderDetail> orderDetails = orderDetailMapper.getByOrderId(orderId);
 
                 OrderVO orderVO = new OrderVO();
@@ -121,5 +120,19 @@ public class OrderServiceImpl implements OrderService {
             }
         }
         return new PageResult(page.getTotal(), list);
+    }
+
+    public OrderVO details(Long id) {
+
+        Orders orders = orderMapper.getById(id);
+
+
+        List<OrderDetail> orderDetailList = orderDetailMapper.getByOrderId(orders.getId());
+
+        OrderVO orderVO = new OrderVO();
+        BeanUtils.copyProperties(orders, orderVO);
+        orderVO.setOrderDetailList(orderDetailList);
+
+        return orderVO;
     }
 }
