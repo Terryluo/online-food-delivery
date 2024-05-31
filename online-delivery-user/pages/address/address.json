@@ -1,6 +1,6 @@
 {
   "navigationStyle": "custom",
-  "navigationBarTitleText": "地址管理",
+  "navigationBarTitleText": "Address Book",
   "enablePullDownRefresh": false,
   "navigationBarBackgroundColor": "#333333",
   "usingComponents": {

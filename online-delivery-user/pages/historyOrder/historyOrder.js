@@ -354,7 +354,7 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 29);function _interopRe
         page: this.pageInfo.page,
         status: this.status !== '' ? this.status : '' };
 
-      uni.showLoading({ title: '加载中', mask: true });
+      uni.showLoading({ title: 'Loading', mask: true });
       (0, _api.getOrderPage)(params).then(function (res) {
         if (res.code === 1) {
           setTimeout(function () {uni.hideLoading();}, 100);
@@ -417,7 +417,7 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 29);function _interopRe
     },
 
     lower: function lower() {
-      this.loadingText = '数据加载中...';
+      this.loadingText = 'Loading...';
       this.loading = true;
       this.dataAdd();
 

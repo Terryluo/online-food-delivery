@@ -337,11 +337,11 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
       items: [
       {
         value: "0",
-        name: "先生" },
+        name: "Mr." },
 
       {
         value: "1",
-        name: "女士" }],
+        name: "Ms." }],
 
 
       current: 0,
@@ -387,11 +387,11 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
   },
   onLoad: function onLoad(options) {
     this.init();
-    if (options && options.type === "编辑") {
+    if (options && options.type === "edit") {
       this.delId = "";
       this.showDel = true;
       uni.setNavigationBarTitle({
-        title: "编辑收获地址" });
+        title: "Edit address" });
 
       // 保存将要删除的id
       this.delId = options.id;
@@ -422,7 +422,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
         url: "/pages/address/address" });
 
     },
-    // 查询地址详情接口
+    // check address detail
     queryAddressBookById: function queryAddressBookById(id) {var _this = this;
       (0, _api.queryAddressBookById)({ id: id }).then(function (res) {
         if (res.code === 1) {
@@ -434,7 +434,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
             name: res.data.consignee,
             gender: res.data.gender,
             type: Number(res.data.label),
-            detail: res.data.detail,
+            addressDetail: res.data.addressDetail,
             id: res.data.id };
 
           if (
@@ -480,35 +480,23 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
     sexChangeHandle: function sexChangeHandle(val) {
       this.form.gender = val;
     },
-    // 保存地址
+    // Save Address
     addAddressFun: function addAddressFun() {
       if (this.form.name === "") {
         return uni.showToast({
-          title: "联系人不能为空",
+          title: "Contact name could not be empty",
           duration: 1000,
           icon: "none" });
 
       } else if (this.form.phone === "") {
         return uni.showToast({
-          title: "手机号不能为空",
+          title: "phone number cannot be empty",
           duration: 1000,
           icon: "none" });
 
-      } else if (this.form.type === "") {
+      } else if (this.form.addressDetail === "") {
         return uni.showToast({
-          title: "所属标签不能为空",
-          duration: 1000,
-          icon: "none" });
-
-      } else if (this.address === "") {
-        return uni.showToast({
-          title: "所在地区不能为空",
-          duration: 1000,
-          icon: "none" });
-
-      } else if (this.form.detail === "") {
-        return uni.showToast({
-          title: "详细地址不能为空不能为空",
+          title: "address could not be empty",
           duration: 1000,
           icon: "none" });
 
@@ -516,20 +504,20 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
 
       if (this.form.phone) {
         var reg =
-        /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+        /^\d+$/;
         if (!reg.test(this.form.phone)) {
           return uni.showToast({
-            title: "手机号输入有误",
+            title: "phone number error",
             duration: 1000,
             icon: "none" });
 
         }
       }
       if (this.form.name) {
-        var _reg = /^[\u0391-\uFFE5a-zA-Z 0-9]{2,12}$/;
+        var _reg = /^[\u0391-\uFFE5a-zA-Z 0-9]{2,20}$/;
         if (!_reg.test(this.form.name)) {
           return uni.showToast({
-            title: "请输入合法的2-12个字符",
+            title: "name should be 2-20 characters",
             duration: 1000,
             icon: "none" });
 
@@ -539,12 +527,9 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
       this.form), {}, {
         // gender: this.form.radio,
         label: this.form.type,
-        consignee: this.form.name,
-        provinceName: this.address.split("/")[0],
-        cityName: this.address.split("/")[1],
-        districtName: this.address.split("/")[2] });
+        consignee: this.form.name });
 
-      // 编辑
+      // edit
       if (this.showDel) {
         (0, _api.editAddressBook)(params).then(function (res) {
           if (res.code === 1) {
@@ -564,7 +549,7 @@ var _api = __webpack_require__(/*! ../api/api.js */ 24);function ownKeys(object,
         });
       }
     },
-    // 删除地址
+    // Delete Address
     deleteAddressFun: function deleteAddressFun() {var _this2 = this;
       (0, _api.delAddressBook)(this.delId).then(function (res) {
         if (res.code === 1) {

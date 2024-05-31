@@ -289,7 +289,7 @@ var _reachBottom = _interopRequireDefault(__webpack_require__(/*! @/components/r
     },
     getAddressList: function getAddressList() {var _this = this;
       this.testValue = false;
-      uni.showLoading({ title: '加载中', mask: true });
+      uni.showLoading({ title: 'Loading', mask: true });
       (0, _api.queryAddressBookList)().then(function (res) {
         if (res.code === 1) {
           setTimeout(function () {uni.hideLoading();}, 100);
@@ -307,8 +307,8 @@ var _reachBottom = _interopRequireDefault(__webpack_require__(/*! @/components/r
     },
 
     addOrEdit: function addOrEdit(type, item) {
-      // 编辑与新增
-      if (type === '新增') {
+      // Edit or new
+      if (type === 'add') {
         // TODO
         uni.redirectTo({
           url: '/pages/addOrEditAddress/addOrEditAddress' });
@@ -316,11 +316,11 @@ var _reachBottom = _interopRequireDefault(__webpack_require__(/*! @/components/r
       } else {
         // TODO
         uni.redirectTo({
-          url: '/pages/addOrEditAddress/addOrEditAddress?type=' + '编辑' + '&' + 'id=' + item.id });
+          url: '/pages/addOrEditAddress/addOrEditAddress?type=' + 'edit' + '&' + 'id=' + item.id });
 
       }
     },
-    // 点击整体设置为默认地址并返填订单页面
+    // set default address
     choseAddress: function choseAddress(e, item) {
       // this.getRadio(e, item)
       console.log(item, 555);
@@ -340,7 +340,7 @@ var _reachBottom = _interopRequireDefault(__webpack_require__(/*! @/components/r
       (0, _api.putAddressBookDefault)({ id: item.id }).then(function (res) {
         if (res.code === 1) {
           uni.showToast({
-            title: '默认地址设置成功',
+            title: 'Default Address Set Successfully',
             duration: 2000,
             icon: 'none' });
 

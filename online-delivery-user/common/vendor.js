@@ -2696,7 +2696,7 @@ var store = new _vuex.default.Store({
     setRemark: function setRemark(state, provider) {
       state.remarkData = provider;
     },
-    // 保存地址
+    // Save Address
     setAddress: function setAddress(state, provider) {
       state.addressData = provider;
     } },
@@ -20028,7 +20028,7 @@ exports.delDish = delDish;var clearOrder = function clearOrder(params) {return (
       params: params }));};
 
 
-// 提交订单 
+// Checkout Order 
 exports.clearOrder = clearOrder;var payOrder = function payOrder(params) {return (
     (0, _request.request)({
       url: "/user/order/pay/".concat(params.tableId, "/").concat(params.jsCode),
@@ -20199,7 +20199,7 @@ exports.addAddressBook = addAddressBook;var editAddressBook = function editAddre
 
 };
 
-// 删除地址
+// Delete Address
 exports.editAddressBook = editAddressBook;var delAddressBook = function delAddressBook(id) {
   return (0, _request.request)({
     url: "/user/addressBook/?id=".concat(id),
@@ -20227,7 +20227,7 @@ exports.queryAddressBookById = queryAddressBookById;var oneOrderAgain = function
 
 };
 
-// 查询默认地址
+// get default address
 exports.oneOrderAgain = oneOrderAgain;var getAddressBookDefault = function getAddressBookDefault() {
   return (0, _request.request)({
     url: '/user/addressBook/default',
@@ -21955,17 +21955,17 @@ var _default = {
     this.getHarfAnOur();
 
     // 存在options说明换地址了
-    if (this.addressData() && this.addressData().detail) {
+    if (this.addressData() && this.addressData().addressDetail) {
       this.addressBookId = '';
       var newAddress = this.addressData();
-      this.address = newAddress.provinceName + newAddress.cityName + newAddress.districtName + newAddress.detail;
+      this.addressDetail = newAddress.addressDetail;
       this.phoneNumber = newAddress.phone;
       this.nickName = newAddress.consignee;
       this.gender = newAddress.gender;
       this.addressBookId = newAddress.id;
       this.addressLabel = (0, _index.getLableVal)(newAddress.label);
     } else {
-      // 默认地址查询
+      // get default address
       this.getAddressBookDefault();
     }
 
@@ -22034,13 +22034,12 @@ var _default = {
         }
       });
     },
-    // 默认地址查询
+    // get default address
     getAddressBookDefault: function getAddressBookDefault() {var _this5 = this;
       (0, _api.getAddressBookDefault)().then(function (res) {
         if (res.code === 1) {
           _this5.addressBookId = '';
-          _this5.address = res.data.provinceName + res.data.cityName + res.data.districtName + res.data.
-          detail;
+          _this5.addressDetail = res.data.addressDetail;
           _this5.phoneNumber = res.data.phone;
           _this5.nickName = res.data.consignee;
           _this5.gender = res.data.gender;
@@ -22095,7 +22094,7 @@ var _default = {
 
       if (!this.address) {
         uni.showToast({
-          title: '请选择收货地址',
+          title: 'Please Select Address',
           icon: 'none' });
 
         return false;
