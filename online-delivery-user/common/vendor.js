@@ -4173,7 +4173,7 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
       openTablePop: false,
       // 规格有关的数组
       flavorDataes: [],
-      // 加入购物车数量
+      // Add To Cart数量
       orderDishNumber: 0,
       // 菜品金额
       orderDishPrice: 0,
@@ -4440,7 +4440,7 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
                 if (!(params.type === 1)) {_context4.next = 8;break;}_context4.next = 6;return (
                   (0, _api.dishListByCategoryId)(param).then(function (res) {
                     if (res && res.code === 1) {
-                      // 添加一个字段去实时更新加入购物车number数量 ----- newCardNumber
+                      // 添加一个字段去实时更新Add To Cartnumber数量 ----- newCardNumber
                       _this7.dishListData = res.data && res.data.map(function (obj) {return _objectSpread(_objectSpread({},
                         obj), {}, {
                           type: 1,
@@ -4515,7 +4515,7 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
 
                 // this.openDetailPop = false
                 _this11.openMoreNormPop = false;
-                // 实时更新obj.newCardNumber新添加的字段----加入购物车数量number
+                // 实时更新obj.newCardNumber新添加的字段----Add To Cart数量number
                 // item.newCardNumber++
                 _this11.tablewareNumber++;
                 _this11.dishDetailes.dishNumber++;
@@ -4582,7 +4582,7 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
                   }
                 }).catch(function (err) {});case 15:case "end":return _context8.stop();}}}, _callee8);}))();
     },
-    // 加入购物车
+    // Add To Cart
     addShop: function addShop(item) {
       // this.openDetailPop = true
       this.dishDetailes = item;
@@ -4590,7 +4590,7 @@ var _index = __webpack_require__(/*! ../../utils/index.js */ 29);function _inter
     },
     // 减菜 - 添加菜品
     redDishAction: function redDishAction(item, form) {var _this12 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var dishFlavorDatas, flavorRemark, params;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:
-                // 实时更新obj.newCardNumber新添加的字段----加入购物车数量number
+                // 实时更新obj.newCardNumber新添加的字段----Add To Cart数量number
                 // if (item.newCardNumber === 0) {
                 // 	item.newCardNumber = 0
                 // } else {
@@ -21847,7 +21847,7 @@ var _default = {
       addressBookId: '',
       addressLabel: '',
       tagLabel: '',
-      // 加入购物车数量
+      // Add To Cart数量
       orderDishNumber: 0,
       showDisplay: false,
       type: 'center',
