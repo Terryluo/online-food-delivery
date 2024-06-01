@@ -18,4 +18,7 @@ public interface OrderMapper {
 
     @Update("update shopping_cart set status = #{orders.status} where id = #{orders.id}")
     void update(Orders orders);
+
+    @Select("select count(id) from orders where status = #{status}")
+    Integer countStatus(Integer toBeConfirmed);
 }
