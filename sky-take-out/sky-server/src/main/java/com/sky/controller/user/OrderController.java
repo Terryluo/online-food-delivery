@@ -1,7 +1,13 @@
 package com.sky.controller.user;
 
+import com.alibaba.fastjson.JSONObject;
+import com.sky.context.BaseContext;
 import com.sky.dto.OrdersPaymentDTO;
 import com.sky.dto.OrdersSubmitDTO;
+import com.sky.entity.Orders;
+import com.sky.entity.User;
+import com.sky.mapper.OrderMapper;
+import com.sky.mapper.UserMapper;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.OrderService;
@@ -14,6 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+
 @RestController("userOrderController")
 @RequestMapping("/user/order")
 @Api(tags = "order APIs")
@@ -22,6 +30,12 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
+    private OrderMapper orderMapper;
 
     /**
      * submit order
@@ -42,10 +56,31 @@ public class OrderController {
      */
     @PutMapping("/payment")
     @ApiOperation("make order payment")
-    public Result<OrderPaymentVO> payment(@RequestBody OrdersPaymentDTO ordersPaymentDTO) {
+    public Result<OrderPaymentVO> payment(@RequestBody OrdersPaymentDTO ordersPaymentDTO) throws Exception {
+        log.info("payment proceed: {}", ordersPaymentDTO);
+        Long userId = BaseContext.getCurrentId();
+        User user = userMapper.getById(userId);
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("code", "ORDERPAID");
+
+        OrderPaymentVO vo = jsonObject.toJavaObject(OrderPaymentVO.class);
+        vo.setPackageStr(jsonObject.getString("package"));
+
+        Integer OrderPaidStatus = Orders.PAID;
+        Integer OrderStatus = Orders.TO_BE_CONFIRMED;
+
+        LocalDateTime check_out_time = LocalDateTime.now();
+        orderMapper.updateStatus(OrderStatus, OrderPaidStatus, check_out_time, ordersPaymentDTO.getOrderNumber());
+
+        return Result.success(vo);
+    }
+    /*public Result<OrderPaymentVO> payment(@RequestBody OrdersPaymentDTO ordersPaymentDTO) {
         OrderPaymentVO orderPaymentVO = OrderPaymentVO.builder().build();
         return Result.success(orderPaymentVO);
-    }
+    }*/
+
+
 
     /**
      * order histories

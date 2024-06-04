@@ -30,4 +30,10 @@ public interface OrderMapper {
 
     @Select("select * from orders where status = #{status} and order_time < #{orderTimeLimit}")
     List<Orders> getTimeOutOrderByStatusAndLimit(Integer status, LocalDateTime orderTimeLimit);
+
+    @Select("select * from orders where number = #{orderNumber}")
+    Orders getByNumber(String orderNumber);
+
+    @Update("update orders set status = #{orderStatus},pay_status = #{orderPaidStatus} ,checkout_time = #{check_out_time} where number = #{orderNumber}")
+    void updateStatus(Integer orderStatus, Integer orderPaidStatus, LocalDateTime check_out_time, String orderNumber);
 }

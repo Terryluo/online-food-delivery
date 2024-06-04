@@ -215,7 +215,6 @@ var _api = __webpack_require__(/*! @/pages/api/api.js */ 24);function ownKeys(ob
           url: '/pages/details/index?orderId=' + this.orderId });
 
       } else {
-        // 如果支付成功进入成功页
         clearTimeout(this.times);
         var params = {
           orderNumber: this.orderDataInfo.orderNumber,
@@ -223,7 +222,7 @@ var _api = __webpack_require__(/*! @/pages/api/api.js */ 24);function ownKeys(ob
 
         (0, _api.paymentOrder)(params).then(function (res) {
           if (res.code === 1) {
-            wx.requestPayment({
+            /*wx.requestPayment({
               nonceStr: res.data.nonceStr,
               package: res.data.packageStr,
               paySign: res.data.paySign,
@@ -239,10 +238,10 @@ var _api = __webpack_require__(/*! @/pages/api/api.js */ 24);function ownKeys(ob
                 })
                 console.log('Pay Successfully!')
               }
-            })
+            })*/
 
 
-            //uni.redirectTo({url: '/pages/success/index?orderId=' + _this.orderId });
+            uni.redirectTo({url: '/pages/success/index?orderId=' + _this.orderId });
 
           } else {
             wx.showModal({
@@ -254,7 +253,6 @@ var _api = __webpack_require__(/*! @/pages/api/api.js */ 24);function ownKeys(ob
       }
 
     },
-    // // 订单倒计时
     runTimeBack: function runTimeBack() {
       var end = Date.parse(this.orderDataInfo.orderTime.replace(/-/g, "/"));
       var now = Date.parse(new Date());

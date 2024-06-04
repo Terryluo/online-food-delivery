@@ -28521,7 +28521,7 @@ var _default = {
   methods: _objectSpread(_objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)(['setOrderData', 'initdishListMut'])),
   (0, _vuex.mapState)(['shopInfo', 'orderListData', 'shopPhone', 'orderData'])), {}, {
-    // 获取订单详情
+    
     getBaseData: function getBaseData(id) {var _this = this;
       (0, _api.getOrderDetail)(id).then(function (res) {
         if (res.code === 1) {
@@ -28534,37 +28534,36 @@ var _default = {
       });
     },
 
-    // 催单
+
     handleReminder: function handleReminder(type, id) {var _this2 = this;
       (0, _api.reminderOrder)(id).then(function (res) {
         if (res.code === 1) {
           _this2.showConfirm = true;
-          _this2.textTip = '您的催单信息已发出！';
+          _this2.textTip = 'You have urged the Order';
           _this2.$refs.commonPopup.open(type);
           _this2.orderId = id;
         }
       });
     },
-    // 取消订单接口
+
     cancel: function cancel(type, obj) {var _this3 = this;
       (0, _api.cancelOrder)(obj.id).then(function (res) {
         if (res.code === 1) {
           _this3.isPayment = true;
           _this3.showConfirm = true;
-          _this3.textTip = '您的订单已取消！';
+          _this3.textTip = 'Your order has been cancelled!';
           _this3.$refs.commonPopup.open(type);
           _this3.orderId = obj.id;
         }
       });
     },
-    // 取消订单
     handleCancel: function handleCancel(type, obj) {
       if (obj.status === 1 || obj.status === 2) {
         this.cancel(type, obj);
       } else {
         this.showConfirm = false;
         this.$refs.commonPopup.open(type);
-        this.textTip = '请联系商家进行取消！';
+        this.textTip = 'Please reach out to restaurant for cancelling';
       }
     },
     // Orderagain
@@ -28579,7 +28578,7 @@ var _default = {
                   }
                 });case 3:case "end":return _context.stop();}}}, _callee);}))();
     },
-    // 处理状态
+    // process order status
     statusWord: function statusWord(status) {
       console.log(this.timeout, status);
       if (this.timeout && status === 1 || this.orderDetailsData.status === 6) {
@@ -28596,7 +28595,7 @@ var _default = {
           return 'Completed';}
 
     },
-    // 订单倒计时
+    // order count down
     runTimeBack: function runTimeBack(time) {
       // console.log(time,1)
       var end = Date.parse(time.replace(/-/g, "/"));

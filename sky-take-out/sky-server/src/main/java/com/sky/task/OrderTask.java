@@ -17,8 +17,7 @@ public class OrderTask {
     @Autowired
     private OrderMapper orderMapper;
 
-    // @Scheduled(cron = "0 * * * * ?") // every minute
-    @Scheduled(cron = "1/5 * * * * ?") // every minute
+    @Scheduled(cron = "0 * * * * ?") // every minute
     public void processOrderTimeout() {
         log.info("Processing order timeout: {}", LocalDateTime.now());
 
@@ -37,8 +36,7 @@ public class OrderTask {
         }
     }
 
-    //@Scheduled(cron = "0 0 1 * * ?") // everyday 1am execute the process
-    @Scheduled(cron = "0/5 * * * * ?") // everyday 1am execute the process
+    @Scheduled(cron = "0 0 1 * * ?") // everyday 1am execute the process
     public void processDeliveryTimeout() {
         log.info("Processing order timeout: {}", LocalDateTime.now());
 
