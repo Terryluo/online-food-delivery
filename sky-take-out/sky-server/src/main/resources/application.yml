@@ -53,4 +53,4 @@ sky:
   wechat:
     appid: ${sky.wechat.appid}
     secret: ${sky.wechat.secret}
-    notifyUrl: https://513d1d7a.r7.cpolar.top/notify/paySuccess
+    notifyUrl: http://localhost:8080/notify/paySuccess

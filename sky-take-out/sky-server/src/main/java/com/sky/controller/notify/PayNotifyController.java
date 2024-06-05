@@ -9,6 +9,7 @@ import com.wechat.pay.contrib.apache.httpclient.util.AesUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.entity.ContentType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
@@ -36,20 +37,8 @@ public class PayNotifyController {
      */
     @RequestMapping("/paySuccess")
     public void paySuccessNotify(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String body = readData(request);
-        log.info("payment success：{}", body);
-
-        String plainText = decryptData(body);
-        log.info("decrypt data：{}", plainText);
-
-        JSONObject jsonObject = JSON.parseObject(plainText);
-        String outTradeNo = jsonObject.getString("out_trade_no");
-        String transactionId = jsonObject.getString("transaction_id");
-
-        log.info("order number：{}", outTradeNo);
-        log.info("transaction id：{}", transactionId);
-
-        orderService.paySuccess(outTradeNo);
+        log.info("payment success：{}", request);
+        orderService.paySuccess(request.getParameter("orderNumber"));
 
         responseToWechat(response);
     }
@@ -104,7 +93,7 @@ public class PayNotifyController {
     private void responseToWechat(HttpServletResponse response) throws Exception{
         response.setStatus(200);
         HashMap<Object, Object> map = new HashMap<>();
-        map.put("code", "SUCCESS");
+        map.put("code", "1");
         map.put("message", "SUCCESS");
         response.setHeader("Content-type", ContentType.APPLICATION_JSON.toString());
         response.getOutputStream().write(JSONUtils.toJSONString(map).getBytes(StandardCharsets.UTF_8));
