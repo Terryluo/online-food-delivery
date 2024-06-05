@@ -20507,7 +20507,7 @@ function createAnimation(option, _this) {
 Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = void 0;
 
 var baseUrl = 'http://localhost:8080';//request to nginx
-//var baseUrl = 'https://c223c79.r2.cpolar.top';
+//var baseUrl = 'https://70dcab18.r11.vip.cpolar.cn/';
 
 exports.baseUrl = baseUrl;
 
@@ -20544,7 +20544,7 @@ function initWebScoket(params) {
   }
 
   uni.connectSocket({
-    url: 'wss://socket-canzg.itheima.net/ws' });
+    url: 'ws://localhost/ws/'});
 
 
   uni.onSocketOpen(function (res) {
@@ -21994,7 +21994,7 @@ var _default = {
     // 获取一小时以后的时间
     getHarfAnOur: function getHarfAnOur() {
       var date = new Date();
-      date.setTime(date.getTime() + 3600000);
+      date.setTime(date.getTime() + 720000);
       var hours = date.getHours();
       var minutes = date.getMinutes();
       if (hours < 10) hours = '0' + hours;

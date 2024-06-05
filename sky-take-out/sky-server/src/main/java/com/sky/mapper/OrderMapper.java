@@ -23,8 +23,8 @@ public interface OrderMapper {
 
     void update(Orders orders);
 
-    @Select("select count(id) from orders where status = #{toBeConfirmed}")
-    Integer countStatus(Integer toBeConfirmed);
+    @Select("select count(id) from orders where status = #{status}")
+    Integer countStatus(Integer status);
 
     Double sumByMap(Map map);
 

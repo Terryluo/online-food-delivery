@@ -239,10 +239,15 @@ var _api = __webpack_require__(/*! @/pages/api/api.js */ 24);function ownKeys(ob
                 console.log('Pay Successfully!')
               }
             })*/
-
-
-            uni.redirectTo({url: '/pages/success/index?orderId=' + _this.orderId });
-
+            wx.showModal({
+                  title: 'Note',
+                  content: 'Pay Successfully!',
+                  showCancel: false,
+                  confirmText: 'Confirm',
+                  success:function(){
+                    uni.redirectTo({url: '/pages/success/index?orderId=' + _this.orderId });
+                  }
+            })
           } else {
             wx.showModal({
               title: 'Note',
