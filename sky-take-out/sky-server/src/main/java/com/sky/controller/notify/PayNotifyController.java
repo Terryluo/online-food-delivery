@@ -19,7 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 /**
- * 支付回调相关接口
+ * payment APIs
  */
 @RestController
 @RequestMapping("/notify")

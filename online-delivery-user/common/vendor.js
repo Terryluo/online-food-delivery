@@ -22207,7 +22207,7 @@ var _default = {
         }
 
         if (this.tableware !== 'Follow by meal' || this.tableware !== 'No tableware') {
-          this.tablewareData = this.tableware + '份';
+          this.tablewareData = this.tableware;
 
         } else {
           this.tablewareData = this.tableware;
