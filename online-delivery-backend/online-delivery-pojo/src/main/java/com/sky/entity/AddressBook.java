@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * 地址簿
+ * address book
  */
 @Data
 @Builder
